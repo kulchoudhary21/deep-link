@@ -1,0 +1,8 @@
+body {
+  width: 100vh;
+  background-image: url("../Images/bg.avif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
