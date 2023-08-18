@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import DeepLink from "./deepLink";
 import logo from "../Images/logo.jpeg";
+import loadingImg from "../Images/loadingImg.svg";
+import GlossaryImage from "../Images/GlossaryImage.svg";
 import Image from "next/image";
 function DeepLinkComponent() {
   const [userAgentData, setUserAgentData] = useState("");
@@ -16,34 +18,30 @@ function DeepLinkComponent() {
     setUserAgentData(userAgent);
   }, [url]);
   return (
-    <div>
-      <div>
-        <Image
-          src={logo}
-          alt="Picture of the author"
-          width="150px"
-          height="100px"
-          style={{
-            width: "70px",
-            height: "70px",
-            border: "skyblue solid 2px",
-            borderRadius: "70px",
-          }}
-        />
+    <div className="glossaryImage">
+      <div className="banner-img">
+        <Image src={GlossaryImage} />
       </div>
-      <h5
-        style={{
-          fontSize: "36px",
-          color: "#336699",
-          fontFamily: "Roboto",
-          textAlign: "center",
-          width: "-webkit-fill-available",
-          position: "absolute",
-          top: "-30px",
-        }}
-      >
-        Deep Link
-      </h5>
+      <div className="glossary-cont">
+        <div className="site-logo">
+          <Image
+            src={logo}
+            alt="Picture of the author"
+            width="150px"
+            height="100px"
+            style={{
+              width: "70px",
+              height: "70px",
+              border: "skyblue solid 2px",
+              borderRadius: "70px",
+            }}
+          />
+        </div>
+        <div className="loading-img">
+          <Image src={loadingImg} />
+        </div>
+        <h5>Deep Link</h5>
+      </div>
       <DeepLink userAgentData={userAgentData} url={url} />
     </div>
   );
